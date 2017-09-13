@@ -89,7 +89,7 @@ public class IntermediateAI implements TicTacToeStrategy {
     else{}
     
     
-    // if cannot win or block, picks random available space
+    // if cannot win or block, picks random available space (same code as in RandomAI.java)
     boolean throwException = true;
 	for(int i = 0; i < 3; i++) {
 		for(int j = 0; j < 3; j++) {

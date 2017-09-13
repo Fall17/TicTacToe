@@ -86,6 +86,7 @@ public class ButtonView extends BorderPane implements Observer {
     }
   }
 
+  
   private class ButtonListener implements EventHandler<ActionEvent> {
 
     @Override

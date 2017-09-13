@@ -18,6 +18,7 @@ import model.IntermediateAI;
 import model.RandomAI;
 import model.TicTacToeGame;
 import view.ButtonView;
+import view.DrawingView;
 import view.TextAreaView;
 
 /**
@@ -53,6 +54,7 @@ public class TicTacToeGUI extends Application {
   private Observer currentView;
   private Observer buttonView;
   private Observer textAreaView;
+  private Observer drawingView;
  
   private BorderPane window;
   public static final int width = 254;
@@ -70,8 +72,10 @@ public class TicTacToeGUI extends Application {
     // Set up the views
     buttonView = new ButtonView(theGame);
     textAreaView = new TextAreaView(theGame);
+    drawingView = new DrawingView(theGame);
     theGame.addObserver(buttonView);
     theGame.addObserver(textAreaView);
+    theGame.addObserver(drawingView);
    
     setViewTo(buttonView);
     stage.setScene(scene);
@@ -133,6 +137,8 @@ public class TicTacToeGUI extends Application {
         setViewTo(buttonView);
       else if (text.equals("TextArea"))
         setViewTo(textAreaView);
+      else if (text.equals("Drawing"))
+        setViewTo(drawingView);
       else if (text.equals("New Game"))
         theGame.startNewGame(); // The computer player has been set and should not change.
       else if (text.equals("Intermediate"))
