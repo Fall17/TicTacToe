@@ -1,3 +1,5 @@
+// Andrew Marrufo
+
 package model;
 
 // Use Java's Point class to store two ints: an x and a y
